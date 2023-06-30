@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Dados de exemplo do arquivo db.json
-const db = require('./db.json');
+const db = require('../db.json');
 
 // Rota para obter todos os eventos
 app.get('/api/eventos', (req, res) => {
