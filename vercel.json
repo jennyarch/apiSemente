@@ -1,14 +1,34 @@
 {
-    "functions": {
-      "api/server.js": {
-        "memory": 1024,
-        "includeFiles": "db.json"
-      }
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/eventos",
+      "dest": "/server.js"
     },
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "api/server.js"
-      }
-    ]
-  }
+    {
+      "src": "/api/eventos/:id",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/eventos",
+      "methods": ["POST"],
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/eventos/:id",
+      "methods": ["PUT"],
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/eventos/:id",
+      "methods": ["DELETE"],
+      "dest": "/server.js"
+    }
+  ]
+}
