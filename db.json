@@ -1,0 +1,29 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "Culto de Oração",
+      "data": "2023-06-29T10:00",
+      "imagem": "./assets/img/sementes/apresentacao.png"
+    },
+    {
+      "id": 4,
+      "titulo": "Culto de Oração",
+      "data": "2023-06-29T10:00",
+      "imagem": "./assets/img/sementes/capaPrincipal.png"
+    }
+  ],
+  "carrossel": [
+    {
+      "id": 1,
+      "imagem": "apresentacao.png"
+    }
+  ],
+  "reflexao": [
+    {
+      "id": 1,
+      "titulo": "Reflexão",
+      "texto": "...Texto"
+    }
+  ]
+}
