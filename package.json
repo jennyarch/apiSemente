@@ -2,9 +2,9 @@
   "name": "apidata",
   "version": "1.0.0",
   "description": "Deploy JSON Server to Verce",
-  "main": "api/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node api/server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
