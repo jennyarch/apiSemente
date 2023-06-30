@@ -14,6 +14,80 @@ server.listen(4000, () => {
     console.log('JSON Server is running')
 })
 
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const fs = require('fs');
+
+// Configurar o body-parser para analisar o corpo das solicitações
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Ler os dados do arquivo db.json
+const dbPath = './db.json';
+let db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+// Rota para obter todos os eventos
+app.get('/api/eventos', (req, res) => {
+  const eventos = db.eventos;
+  res.json(eventos);
+});
+
+// Rota para obter um evento específico
+app.get('/api/eventos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const evento = db.eventos.find(e => e.id === id);
+  if (!evento) {
+    return res.status(404).json({ error: 'Evento não encontrado' });
+  }
+  res.json(evento);
+});
+
+// Rota para criar um novo evento
+app.post('/api/eventos', (req, res) => {
+  const novoEvento = {
+    id: db.eventos.length > 0 ? Math.max(...db.eventos.map(e => e.id)) + 1 : 1,
+    titulo: req.body.titulo,
+    data: req.body.data,
+    imagem: req.body.imagem,
+  };
+  db.eventos.push(novoEvento);
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  res.status(201).json(novoEvento);
+});
+
+// Rota para atualizar um evento existente
+app.put('/api/eventos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const evento = db.eventos.find(e => e.id === id);
+  if (!evento) {
+    return res.status(404).json({ error: 'Evento não encontrado' });
+  }
+  evento.titulo = req.body.titulo;
+  evento.data = req.body.data;
+  evento.imagem = req.body.imagem;
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  res.json(evento);
+});
+
+// Rota para excluir um evento
+app.delete('/api/eventos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = db.eventos.findIndex(e => e.id === id);
+  if (index === -1) {
+    return res.status(404).json({ error: 'Evento não encontrado' });
+  }
+  db.eventos.splice(index, 1);
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  res.sendStatus(204);
+});
+
+// Iniciar o servidor
+app.listen(4000, () => {
+  console.log('Servidor iniciado na porta 4000');
+});
+
+
 // Export the Server API
 module.exports = server
 
