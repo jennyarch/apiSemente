@@ -30,6 +30,5 @@
       "methods": ["DELETE"],
       "dest": "/server.js"
     }
-  ],
-  "excludeFiles": "tests/**"
+  ]
 }
