@@ -3,7 +3,7 @@
     {
       "id": 1,
       "titulo": "Culto de Oração",
-      "data": "2023-06-29T10:00",
+      "data": "29/06",
       "hora": "10:00",
       "endereco": "Rua X, 1200 - Centro",
       "imagem": "./assets/img/sementes/apresentacao.png"
@@ -11,7 +11,7 @@
     {
       "id": 4,
       "titulo": "Culto de Oração",
-      "data": "2023-06-29T10:00",
+      "data": "30/06",
       "hora": "10:00",
       "endereco": "Rua Y, 1500 - Centro",
       "imagem": "./assets/img/sementes/capaPrincipal.png"
