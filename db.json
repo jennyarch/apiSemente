@@ -20,14 +20,22 @@
   "carrossel": [
     {
       "id": 1,
-      "imagem": "apresentacao.png"
+      "imagem": "./assets/img/fundos/1.png"
+    },
+    {
+      "id": 2,
+      "imagem": "./assets/img/fundos/2.png"
+    },
+    {
+      "id": 3,
+      "imagem": "./assets/img/fundos/3.png"
     }
   ],
   "reflexao": [
     {
       "id": 1,
       "titulo": "Reflexão",
-      "texto": "...Texto"
+      "texto": "Normalmente as reflexões psicológicas são efectuadas pelas pessoas que 'pensam', 'questionam' o que as rodeia. A reflexão psicológica é muitas vezes utilizada na Filosofia. Refletir é pensar, abordar um tema, que nos intriga, por vezes."
     }
   ]
 }
