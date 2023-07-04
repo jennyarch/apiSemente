@@ -82,6 +82,22 @@ app.delete('/api/eventos/:id', (req, res) => {
   res.sendStatus(204);
 });
 
+// ROTA TODAS AS IMAGENS
+app.get('/api/carrossel', (req, res) => {
+  const carrossel = db.carrossel;
+  res.json(carrossel);
+});
+
+//ROTA PARA OBTER UMA IMAGEM ESPECIFICA
+app.get('/api/carrossel/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const carrossel = db.carrossel.find(e => e.id === id);
+  if (!carrossel) {
+    return res.status(404).json({ error: 'Evento não encontrado' });
+  }
+  res.json(carrossel);
+});
+
 // Iniciar o servidor
 app.listen(4000, () => {
   console.log('Servidor iniciado na porta 4000');
