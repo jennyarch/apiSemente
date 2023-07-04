@@ -20,15 +20,15 @@
   "carrossel": [
     {
       "id": 1,
-      "imagem": "./assets/img/fundos/imagem1.png"
+      "imagem": "./assets/img/fundos/nossaigreja.png"
     },
     {
       "id": 2,
-      "imagem": "./assets/img/fundos/imagem2.png"
+      "imagem": "./assets/img/fundos/culto.png"
     },
     {
       "id": 3,
-      "imagem": "./assets/img/fundos/imagem3.png"
+      "imagem": "./assets/img/fundos/semente.png"
     }
   ],
   "reflexao": [
