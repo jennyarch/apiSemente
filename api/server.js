@@ -4,6 +4,7 @@ const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
+
 // Add this before server.use(router)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
@@ -98,10 +99,60 @@ app.get('/api/carrossel/:id', (req, res) => {
   res.json(carrossel);
 });
 
-// Iniciar o servidor
-app.listen(4000, () => {
-  console.log('Servidor iniciado na porta 4000');
+//ROTA PARA CRIAR NOVO LINK
+app.get('/api/links/', (req, res) => {
+  const links = db.links;
+  res.json(links);
 });
+
+app.get('/api/links/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const link = db.links.find(e => e.id === id);
+  if(!link){
+    return res.status(404).json({ error: 'Link não encontrado' });
+  }
+  res.json(link);
+});
+
+app.post('/api/links', (req, res) => {
+  const novoLink = {
+    id: db.links.length > 0 ? Math.max(...db.links.map(e => e.id)) + 1 : 1,
+    link: req.body.link,
+    titulo: req.body.titulo,
+  };
+  db.links.push(novoLink);
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  res.status(201).json(novoLink);
+});
+
+app.put('/api/links/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const link = db.links.find(e => e.id === id);
+  if (!link) {
+    return res.status(404).json({ error: 'Links não encontrado' });
+  }
+  link.id = req.body.id;
+  link.link = req.body.link;
+  link.titulo = req.body.titulo;
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  res.json(link);
+});
+
+app.delete('/api/links/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = db.links.findIndex(e => e.id === id);
+  if (index === -1) {
+    return res.status(404).json({ error: 'Link não encontrado' });
+  }
+  db.links.splice(index, 1);
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+  res.sendStatus(204);
+});
+
+// Iniciar o servidor
+// app.listen(4000, () => {
+//   console.log('Servidor iniciado na porta 4000');
+// });
 
 
 // Export the Server API
