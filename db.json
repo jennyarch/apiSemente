@@ -20,32 +20,53 @@
   "carrossel": [
     {
       "id": 1,
-      "imagem": "./assets/img/fundos/nossaigreja.png"
+      "imagem": "./assets/img/carrossel/semente6.jpg",
+      "alt": "Imagem da nossa semente"
     },
     {
       "id": 2,
-      "imagem": "./assets/img/fundos/culto.png"
+      "imagem": "./assets/img/carrossel/semente2.jpg",
+      "alt": "Imagem da nossa semente"
     },
     {
       "id": 3,
-      "imagem": "./assets/img/fundos/semente.png"
+      "imagem": "./assets/img/carrossel/semente3.jpg",
+      "alt": "Imagem da nossa semente"
+    },
+    {
+      "id": 4,
+      "imagem": "./assets/img/carrossel/semente4.jpg",
+      "alt": "Imagem da nossa semente"
+    },
+    {
+      "id": 5,
+      "imagem": "./assets/img/carrossel/semente5.jpg",
+      "alt": "Imagem da nossa semente"
+    },
+    {
+      "id": 6,
+      "imagem": "./assets/img/carrossel/semente1.jpg",
+      "alt": "Imagem da nossa semente"
     }
   ],
   "reflexao": [
     {
       "id": 1,
-      "titulo": "Reflexão 1",
-      "texto": "Normalmente as reflexões psicológicas são efectuadas pelas pessoas que 'pensam', 'questionam' o que as rodeia. A reflexão psicológica é muitas vezes utilizada na Filosofia. Refletir é pensar, abordar um tema, que nos intriga, por vezes."
+      "titulo": "Individualismo cristão: morte do cristianismo",
+      "texto": "Cresce cada vez mais o individualismo cristão: é cada um por si e Deus por todos. Seria correta essa visão do cristianismo? Seria cristã essa conduta? É como se repetíssemos a resposta de Caim: “Não sei! Por acaso sou guardião do meu irmão?” (Gn 4:9–10)...",
+      "link": "https://sementearacaju.medium.com/individualismo-cristão-morte-do-cristianismo-dfc0c7f11980"
     },
     {
       "id": 2,
-      "titulo": "Reflexão 2",
-      "texto": "Normalmente as reflexões psicológicas são efectuadas pelas pessoas que 'pensam', 'questionam' o que as rodeia. A reflexão psicológica é muitas vezes utilizada na Filosofia. Refletir é pensar, abordar um tema, que nos intriga, por vezes."
+      "titulo": "Apologética de uma existência comunitária desviante",
+      "texto": "É nos vãos, nas brechas que o ministério e vocação de Paulo são delineados. Paulo não conviveu com Cristo, como os doze (um dos requisitos para o apostolado)...",
+      "link": "https://sementearacaju.medium.com/apologética-de-uma-existência-comunitária-desviante-463fe2b9578b"
     },
     {
       "id": 3,
-      "titulo": "Reflexão 3",
-      "texto": "Normalmente as reflexões psicológicas são efectuadas pelas pessoas que 'pensam', 'questionam' o que as rodeia. A reflexão psicológica é muitas vezes utilizada na Filosofia. Refletir é pensar, abordar um tema, que nos intriga, por vezes."
+      "titulo": "Carta Pastoral em alusão ao Dia do Orgulho LGBTQIA+",
+      "texto": "Queridos/as/es irmãos/ãs/nes, Muito nos alegra escrever esta carta pastoral em um dia tão importante para a comunidade LGBTQIA+ de todo o mundo. É um dia celebrativo, mas que carrega consigo a tônica de tantas batalhas travadas desde o 28 de junho de 1969, data das...",
+      "link": "https://sementearacaju.medium.com/carta-pastoral-em-alusão-ao-dia-do-orgulho-lgbtqia-3c885f9ac8d8"
     }
   ],
   "links": [
@@ -68,6 +89,12 @@
       "id": 4,
       "link": "www.teste2.com",
       "titulo": "Linka para teste2"
+    }
+  ],
+  "agenda": [
+    {
+      "id": 1,
+      "imagem": "./assets/img/agenda/agosto.png"
     }
   ]
 }
